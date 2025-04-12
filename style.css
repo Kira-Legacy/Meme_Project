@@ -1,7 +1,6 @@
 body{
     background-color: black;
     color: white;
-    position: relative;
 }
 
 .firstdiv{
@@ -12,7 +11,7 @@ body{
 
 img{
     width: 100%;
-    height: 390px;
+    height: 575px;
     border: 5px solid white;
 }
 
@@ -24,6 +23,6 @@ h1,p{
     text-align: center;
 }
 p{
-    font-size: 21px;
+    font-size: 28px;
 }
 
