@@ -5,14 +5,15 @@ body {
 
 .firstdiv {
     width: 50%;
-    margin-left: 25%;
-    margin-top: 35px;
+    margin: 0 auto;  
+    
 }
 
 img {
-    width: 100%;
-    height: 600px;
+    width: 50%;
+    height: 390px;
     border: 5px solid white;
+    margin-left: 90px;
 }
 
 h1 {
@@ -20,11 +21,6 @@ h1 {
     text-transform: uppercase;
 }
 
-h1,p {
-    text-align: center;
-}
-
 p {
     font-size: 28px;
 }
-
