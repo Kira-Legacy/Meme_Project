@@ -1,23 +1,87 @@
+/* 1. Global Box-Sizing for easier layout calculations */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Base styles (Mobile-First): Apply to all screens by default */
 body {
     background-color: black;
+    margin: 0; /* Remove default body margin */
+    padding: 1rem; /* Add some padding around the edges on small screens */
+    /* Define base font size for rem units */
+    font-size: 16px; /* You can adjust this base as needed */
 }
 
 .meme {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 20px;
+    /* Flexible width for small screens (e.g., 90% of viewport, with padding from body) */
+    width: 100%; /* Will take up full width of padding-constrained body */
+    max-width: 600px; /* Limits the maximum width on larger screens */
+    margin: 5em auto; /* Centers the meme container horizontally, keeps top margin */
     color: white;
     font-family: "Libre Baskerville", serif;
     text-align: center;
+    /* Optional: Add some padding inside the meme container to prevent text from hitting edges */
+    padding: 10px;
 }
 
 .memeimg {
-    width: 100%;
-    height: 720px;
+    width: 100%; /* Ensures image always takes full width of its parent (.meme) */
+    height: auto; /* CRUCIAL: Maintains the image's aspect ratio */
     border: 5px solid white;
+    /* Optional: Add some margin below the image to separate it from the text */
+    margin-bottom: 1em;
 }
 
 h1 {
     text-transform: uppercase;
-    font-size: 2rem;
+    /* Use a fluid font size for H1, slightly smaller for mobile base */
+    font-size: 1.8rem; /* Start with a size relative to body's font-size */
+    line-height: 1.2; /* Improve readability */
+    margin-top: 0; /* Remove default top margin if image has margin-bottom */
+    margin-bottom: 0.5em; /* Some space before paragraph */
+}
+
+p {
+    /* Use rem for body text as well */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1em; /* Space after paragraph */
+}
+
+
+/* Media Queries for Larger Screens */
+
+/* Tablets and larger (e.g., min-width 768px) */
+@media screen and (min-width: 768px) {
+    body {
+        padding: 2rem; /* More padding on larger screens */
+    }
+    .meme {
+        /* On medium screens, the max-width: 600px will likely kick in, centering it */
+        /* If you wanted it wider on tablets before desktop, you could adjust max-width here */
+    }
+    h1 {
+        font-size: 2.5rem; /* Make H1 larger for tablets */
+    }
+    p {
+        font-size: 1.1rem; /* Slightly larger body text for tablets */
+    }
+}
+
+/* Desktops and larger (e.g., min-width 1024px) */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 3rem; /* Even more padding on desktops */
+    }
+    .meme {
+        /* Max-width: 600px should keep it looking good, preventing it from stretching too wide */
+        /* If you wanted it to be like 800px or 900px on very large screens, you could adjust max-width here */
+        max-width: 750px; /* Example: Make it a bit wider on large screens */
+    }
+    h1 {
+        font-size: 3.5rem; /* Make H1 even larger for desktops */
+    }
+    p {
+        font-size: 1.2rem; /* Larger body text for desktops */
+    }
 }
